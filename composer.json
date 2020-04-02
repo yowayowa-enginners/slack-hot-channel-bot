@@ -1,0 +1,12 @@
+{
+    "name": "yowayowa-enginners/slack-hot-channel-bot",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mikkame",
+            "email": "matchasoft.jp@gmail.com"
+        }
+    ],
+    "require": {}
+}
