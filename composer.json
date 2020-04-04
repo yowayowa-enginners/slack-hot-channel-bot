@@ -8,5 +8,10 @@
             "email": "matchasoft.jp@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^4.1",
+        "ext-json": "*",
+        "nesbot/carbon": "^2.32",
+        "tightenco/collect": "^7.4"
+    }
 }
