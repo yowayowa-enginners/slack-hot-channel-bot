@@ -4,8 +4,10 @@ use Carbon\Carbon;
 
 require(__DIR__.'/vendor/autoload.php');
 
-$dotenv = Dotenv\Dotenv::createMutable(__DIR__);
-$dotenv->load();
+if (file_exists(__DIR__.'/.env')) {
+    $dotenv = Dotenv\Dotenv::createMutable(__DIR__);
+    $dotenv->load();
+}
 
 $client = new GuzzleHttp\Client(['base_uri' => 'https://slack.com/api/']);
 $headers = [
