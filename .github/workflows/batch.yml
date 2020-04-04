@@ -20,5 +20,5 @@ jobs:
       run: php batch.php
       env:
         SLACK_API_TOKEN: ${{ secrets.SLACK_API_TOKEN }}
-        SLACK_WEBHOOK_ENDPOINT: ${{ secrets.SLACK_API_TOKEN }}
-        TITLE: ${{ secrets.SLACK_API_TOKEN }}
+        SLACK_WEBHOOK_ENDPOINT: ${{ secrets.SLACK_WEBHOOK_ENDPOINT }}
+        TITLE: ${{ secrets.TITLE }}
