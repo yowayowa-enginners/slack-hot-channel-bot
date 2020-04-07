@@ -54,7 +54,7 @@ foreach ($channel_list as $channel) {
             $result['users'][] = $message['user'] ?? '';
         }
     }
-    if ($result['messages'] === 100) {
+    if (is_int($result['messages']) && $result['messages'] >= 100) {
         $result['messages'] = '99+';
     }
     $result['users'] = count(array_unique($result['users']));
