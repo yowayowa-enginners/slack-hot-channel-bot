@@ -96,5 +96,8 @@ foreach ($report as $idx => $result) {
 $client = new GuzzleHttp\Client();
 
 $res = $client->request('POST', getenv('SLACK_WEBHOOK_ENDPOINT'), [
-    'json' => $message
+    'json' => $message,
+    'http_errors' => false
 ]);
+
+var_dump(json_decode($res->getBody()));
