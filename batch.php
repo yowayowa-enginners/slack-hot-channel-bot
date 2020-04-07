@@ -100,4 +100,4 @@ $res = $client->request('POST', getenv('SLACK_WEBHOOK_ENDPOINT'), [
     'http_errors' => false
 ]);
 
-var_dump(json_decode($res->getBody()));
+var_dump($res->getBody().'');
