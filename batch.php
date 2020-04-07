@@ -73,7 +73,7 @@ $message = [
     'blocks' => [
         [
             'type' => 'section',
-            'block_id' => 'section'.($idx+1),
+            'block_id' => 'section0',
             'text' => [
                 'type' => 'mrkdwn',
                 'text' => getenv('TITLE')
