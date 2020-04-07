@@ -4,6 +4,8 @@ use Carbon\Carbon;
 
 require(__DIR__.'/vendor/autoload.php');
 
+$options = getopt('t::');
+
 if (file_exists(__DIR__.'/.env')) {
     $dotenv = Dotenv\Dotenv::createMutable(__DIR__);
     $dotenv->load();
@@ -94,6 +96,8 @@ foreach ($report as $idx => $result) {
 }
 
 $client = new GuzzleHttp\Client();
+
+if(isset($options['t'])) return 0;
 
 $res = $client->request('POST', getenv('SLACK_WEBHOOK_ENDPOINT'), [
     'json' => $message,
