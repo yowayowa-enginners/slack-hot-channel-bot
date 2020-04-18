@@ -69,6 +69,19 @@ $report = collect($report)->filter(function ($result) {
     return $result['updated_at'];
 })->reverse()->take(20)->reverse();
 
+//$reportをよりHOTなチャンネル順に並べ替える
+//優先順は投稿数*投稿者数
+$sortKey = array();
+foreach ($report as $idx => $val) {
+    if($val['messages'] === '99+'){
+        $sortKey[$idx] = 100 * $val['users'];
+    }else{
+        $sortKey[$idx] = $val['messages'] * $val['users'];
+    }
+  }
+array_multisort($sortKey, SORT_ASC, $data);
+
+
 $message = [
     'blocks' => [
         [
